@@ -140,7 +140,7 @@ You need the following installed and available in your $PATH:
 
 * Java 17
 * Apache maven 3.0.4 or greater
-* Jackson 2.4.5 or greater
+* Jackson 3.0.3 or greater
 
 
 ### To build from source (currently 2.2.51-SNAPSHOT)
