@@ -3,12 +3,10 @@ package io.swagger.v3.core.jackson;
 import tools.jackson.core.Version;
 import tools.jackson.databind.AnnotationIntrospector;
 import tools.jackson.databind.BeanDescription;
+import tools.jackson.databind.JacksonModule;
 import tools.jackson.databind.JavaType;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.PropertyName;
-import tools.jackson.databind.cfg.MapperBuilder;
-import tools.jackson.databind.introspect.AccessorNamingStrategy;
-import tools.jackson.databind.introspect.BasicBeanDescription;
 import tools.jackson.databind.introspect.DefaultAccessorNamingStrategy;
 import tools.jackson.databind.jsontype.NamedType;
 import tools.jackson.databind.module.SimpleModule;
@@ -19,9 +17,12 @@ import io.swagger.v3.core.util.ReflectionUtils;
 import io.swagger.v3.oas.models.media.Schema;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import java.util.ArrayList;
 
 public abstract class AbstractModelConverter implements ModelConverter {
     protected final ObjectMapper _mapper;
@@ -37,13 +38,21 @@ public abstract class AbstractModelConverter implements ModelConverter {
     }
 
     protected AbstractModelConverter(ObjectMapper mapper, TypeNameResolver typeNameResolver) {
+        // Build a new ObjectMapper that preserves all existing modules from the input mapper
+        // while adding the SwaggerModule and setting accessor naming
+        // Get existing modules from input mapper and add SwaggerModule
+        List<JacksonModule> modules = new ArrayList<>(mapper.registeredModules());
+        // Add SwaggerModule
+        modules.add(new SimpleModule("swagger", Version.unknownVersion()) {
+            @Override
+            public void setupModule(SetupContext context) {
+                context.insertAnnotationIntrospector(new SwaggerAnnotationIntrospector());
+            }
+        });
+
+        // Build mapper with all modules preserved
         _mapper = mapper.rebuild()
-                .addModule(new SimpleModule("swagger", Version.unknownVersion()) {
-                    @Override
-                    public void setupModule(SetupContext context) {
-                        context.insertAnnotationIntrospector(new SwaggerAnnotationIntrospector());
-                    }
-                })
+                .addModules(modules)
                 .accessorNaming(new DefaultAccessorNamingStrategy.Provider()
                         .withFirstCharAcceptance(true, true))
                 .build();
