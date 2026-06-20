@@ -80,7 +80,7 @@ public class SwaggerResolveTest {
                 "    implementation 'io.github.vpelikh:swagger-jakarta-rest:${project.version}'\n" +
                 "    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'\n" +
                 "    implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'\n" +
-                "    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'\n" +
+                "    testImplementation 'org.wiremock:wiremock:4.0.0-beta.36'\n" +
                 "    testImplementation 'org.testng:testng:7.10.2'\n" +
                 "\n" +
                 "\n" +
@@ -153,7 +153,7 @@ public class SwaggerResolveTest {
                 "    implementation 'io.github.vpelikh:swagger-jakarta-rest:${project.version}'\n" +
                 "    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'\n" +
                 "    implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'\n" +
-                "    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'\n" +
+                "    testImplementation 'org.wiremock:wiremock:4.0.0-beta.36'\n" +
                 "    testImplementation 'org.testng:testng:7.10.2'\n" +
                 "\n" +
                 "\n" +
