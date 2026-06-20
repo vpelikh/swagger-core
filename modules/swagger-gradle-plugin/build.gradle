@@ -38,9 +38,9 @@ dependencies {
         exclude group: 'com.github.jknack', module: 'handlebars'
         exclude group: 'com.github.jknack', module: 'handlebars-helpers'
     }
-    testImplementation 'javax.servlet:javax.servlet-api:3.1.0'
+    testImplementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'
     testImplementation 'com.google.guava:guava:32.1.3-jre'
-    testImplementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+    testImplementation 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
     testImplementation "io.github.vpelikh:swagger-jakarta-rest:${project.version}"
     testImplementation 'org.testng:testng:7.10.2'
     testImplementation "org.eclipse.jetty:jetty-server:${project.jettyVersion}"

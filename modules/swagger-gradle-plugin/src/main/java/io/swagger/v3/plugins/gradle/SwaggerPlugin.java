@@ -17,9 +17,9 @@ public class SwaggerPlugin implements Plugin<Project> {
         config.defaultDependencies(new Action<DependencySet>() {
             public void execute(DependencySet dependencies) {
                 dependencies.add(project.getDependencies().create("org.apache.commons:commons-lang3:3.20.0"));
-                dependencies.add(project.getDependencies().create("io.github.vpelikh:swagger-jaxrs2:4.0.0-SNAPSHOT"));
-                dependencies.add(project.getDependencies().create("javax.ws.rs:javax.ws.rs-api:2.1"));
-                dependencies.add(project.getDependencies().create("javax.servlet:javax.servlet-api:3.1.0"));
+                dependencies.add(project.getDependencies().create("io.github.vpelikh:swagger-jakarta-rest:${project.version}"));
+                dependencies.add(project.getDependencies().create("jakarta.ws.rs:jakarta.ws.rs-api:4.0.0"));
+                dependencies.add(project.getDependencies().create("jakarta.servlet:jakarta.servlet-api:6.1.0"));
             }
         });
         TaskProvider<ResolveTask> lazyTask = project.getTasks().register("resolve", ResolveTask.class,task -> {
