@@ -58,17 +58,19 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
+                <groupId>org.eclipse.jetty.ee11</groupId>
+                <artifactId>jetty-ee11-maven-plugin</artifactId>
                 <configuration>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <scan>10</scan>
                     <httpConnector><port>${jetty.port}</port></httpConnector>
                     <stopKey>a</stopKey>
                     <stopPort>${jetty.port.stop}</stopPort>
                     <supportedPackagings>
                         <supportedPackaging>jar</supportedPackaging>
                     </supportedPackagings>
-                    <webAppSourceDirectory>${project.basedir}/src/test/webapp</webAppSourceDirectory>
+                    <webApp>
+                        <baseResource>${project.basedir}/src/test/webapp</baseResource>
+                    </webApp>
                     <useTestScope>true</useTestScope>
                 </configuration>
                 <executions>
@@ -79,7 +81,7 @@
                             <goal>start</goal>
                         </goals>
                         <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <scan>0</scan>
                         </configuration>
                     </execution>
                     <execution>
