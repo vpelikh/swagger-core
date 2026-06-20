@@ -248,7 +248,13 @@ Java 17 or higher is required.
 
 ### Do I need to update CDI imports?
 
-The `javax.enterprise.*` and `javax.inject.*` packages still use the `javax` namespace. These will be migrated to `jakarta.*` when Weld 4+ (Jakarta CDI) is adopted. For now, keep `javax.enterprise` and `javax.inject` imports.
+Yes, CDI imports have been fully migrated to `jakarta.*` namespace:
+- `javax.inject.Inject` → `jakarta.inject.Inject`
+- `javax.enterprise.context.ApplicationScoped` → `jakarta.enterprise.context.ApplicationScoped`
+- `javax.enterprise.inject.Produces` → `jakarta.enterprise.inject.Produces`
+- `javax.enterprise.inject.spi.Extension` → `jakarta.enterprise.inject.spi.Extension`
+
+The project now uses **Weld 6.0.4.Final** (Jakarta CDI 4.x). No javax CDI imports remain.
 
 ## Maven/Gradle Configuration Examples
 
