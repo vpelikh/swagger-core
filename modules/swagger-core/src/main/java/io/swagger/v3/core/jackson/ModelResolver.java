@@ -3393,7 +3393,7 @@ public class ModelResolver extends AbstractModelConverter implements ModelConver
 
     protected boolean shouldIgnoreClass(Type type) {
         if (type instanceof Class<?> cls) {
-            if (cls.getName().equals("javax.ws.rs.Response")) {
+            if (cls.getName().equals("jakarta.ws.rs.Response")) {
                 return true;
             }
         } else {
