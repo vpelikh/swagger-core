@@ -69,6 +69,7 @@
                         <supportedPackaging>jar</supportedPackaging>
                     </supportedPackagings>
                     <webAppSourceDirectory>${project.basedir}/src/test/webapp</webAppSourceDirectory>
+                    <useTestScope>true</useTestScope>
                 </configuration>
                 <executions>
                     <execution>
