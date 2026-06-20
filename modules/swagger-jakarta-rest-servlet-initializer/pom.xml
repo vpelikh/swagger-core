@@ -90,7 +90,9 @@
                     <stopPort>${jetty.port.stop}</stopPort>
                     <useTestScope>true</useTestScope>
                     <webApp>
-                        <baseResource>${project.basedir}/src/test/webapp</baseResource>
+                        <resourceBases>
+                            <resourceBase>${project.basedir}/src/test/webapp</resourceBase>
+                        </resourceBases>
                     </webApp>
                 </configuration>
                 <dependencies>

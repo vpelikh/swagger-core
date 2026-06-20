@@ -69,7 +69,9 @@
                         <supportedPackaging>jar</supportedPackaging>
                     </supportedPackagings>
                     <webApp>
-                        <baseResource>${project.basedir}/src/test/webapp</baseResource>
+                        <resourceBases>
+                            <resourceBase>${project.basedir}/src/test/webapp</resourceBase>
+                        </resourceBases>
                     </webApp>
                     <useTestScope>true</useTestScope>
                 </configuration>
