@@ -29,7 +29,7 @@ All core modules (`swagger-annotations`, `swagger-models`, `swagger-core`, `swag
 9. JAXB API upgrade: 2.3.3 → 4.0.5
 10. Validation API upgrade: 2.0.2 → 3.1.1
 11. Annotation API: now explicitly managed (3.0.0)
-12. Jetty upgrade: 9.x → 11.0.26
+12. Jetty upgrade: 9.x → 12.1.10
 
 ## Migration Steps
 
@@ -193,7 +193,7 @@ Update your dependency management for Jakarta EE 11:
 | Validation API | 3.1.1 |
 | Annotation API | 3.0.0 |
 | Jersey | 4.0.2 |
-|| Jetty | 11.0.26 |
+|| Jetty | 12.1.10 |
 
 ### Step 6: Build and test
 
@@ -269,7 +269,7 @@ The project now uses **Weld 6.0.4.Final** (Jakarta CDI 4.x). No javax CDI import
   <validation-api-version>3.1.1</validation-api-version>
   <jakarta.annotation-api-version>3.0.0</jakarta.annotation-api-version>
   <jersey-version>4.0.2</jersey-version>
-  <jetty-version>11.0.26</jetty-version>
+  <jetty-version>12.1.10</jetty-version>
   <jackson-version>3.1.4</jackson-version>
 </properties>
 
