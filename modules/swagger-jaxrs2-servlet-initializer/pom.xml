@@ -176,7 +176,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-server</artifactId>
-            <version>${jersey2-version}</version>
+            <version>${jersey-version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>

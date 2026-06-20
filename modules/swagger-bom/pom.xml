@@ -94,42 +94,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Core Swagger (OpenAPI 3) libraries -->
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-models</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-integration</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2-servlet-initializer-v2</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+            <!-- Jakarta namespace artifacts -->
             <!-- Jakarta namespace artifacts -->
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
@@ -164,6 +129,21 @@
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
                 <artifactId>swagger-jaxrs2-servlet-initializer-v2-jakarta</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.vpelikh</groupId>
+                <artifactId>swagger-jakarta-rest</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.vpelikh</groupId>
+                <artifactId>swagger-jakarta-rest-servlet-initializer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.vpelikh</groupId>
+                <artifactId>swagger-jakarta-rest-servlet-initializer-v2</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

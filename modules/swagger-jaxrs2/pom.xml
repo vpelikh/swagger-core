@@ -246,7 +246,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
-            <version>${jersey2-version}</version>
+            <version>${jersey-version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -262,7 +262,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-multipart</artifactId>
-            <version>${jersey2-version}</version>
+            <version>${jersey-version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -278,7 +278,7 @@
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
-            <version>${jersey2-version}</version>
+            <version>${jersey-version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
