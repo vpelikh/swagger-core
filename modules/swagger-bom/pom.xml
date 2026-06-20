@@ -94,43 +94,28 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Jakarta namespace artifacts -->
-            <!-- Jakarta namespace artifacts -->
+            <!-- Base artifacts (now use jakarta namespace in source) -->
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-annotations-jakarta</artifactId>
+                <artifactId>swagger-annotations</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-models-jakarta</artifactId>
+                <artifactId>swagger-models</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-core-jakarta</artifactId>
+                <artifactId>swagger-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-integration-jakarta</artifactId>
+                <artifactId>swagger-integration</artifactId>
                 <version>${project.version}</version>
             </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2-jakarta</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2-servlet-initializer-jakarta</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.vpelikh</groupId>
-                <artifactId>swagger-jaxrs2-servlet-initializer-v2-jakarta</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+            <!-- Jakarta REST 4.0 artifacts -->
             <dependency>
                 <groupId>io.github.vpelikh</groupId>
                 <artifactId>swagger-jakarta-rest</artifactId>
@@ -148,6 +133,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
 </project>
-

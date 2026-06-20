@@ -380,9 +380,6 @@
         <module>modules/swagger-models</module>
         <module>modules/swagger-core</module>
         <module>modules/swagger-integration</module>
-        <module>modules/swagger-jaxrs2</module>
-        <module>modules/swagger-jaxrs2-servlet-initializer</module>
-        <module>modules/swagger-jaxrs2-servlet-initializer-v2</module>
         <module>modules/swagger-bom</module>
         <module>modules/swagger-maven-plugin</module>
         <module>modules/swagger-jakarta-rest</module>
@@ -639,7 +636,7 @@
         <commons-lang-version>3.20.0</commons-lang-version>
         <commons-io-version>2.22.0</commons-io-version>
         <slf4j-version>2.0.18</slf4j-version>
-        <jetty-version>12.1.0</jetty-version>
+        <jetty-version>11.0.26</jetty-version>
         <testng-version>7.12.0</testng-version>
         <mockito-version>5.23.0</mockito-version>
         <rest-assured-version>6.0.0</rest-assured-version>
