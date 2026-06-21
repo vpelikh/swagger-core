@@ -51,7 +51,7 @@ jobs:
         run: |
           ./mvnw --no-transfer-progress -B install --file pom.xml
           cd ./modules/swagger-gradle-plugin
-          ./gradlew build --info
+          ./gradlew build --info --build-cache
           cd ../..
 
       - name: Deploy SNAPSHOT to Maven Central (only on push to master with Java 17)
