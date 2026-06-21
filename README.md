@@ -215,10 +215,6 @@ Import it once and omit versions on all individual Swagger dependencies.
     <groupId>io.github.vpelikh</groupId>
     <artifactId>swagger-jakarta-rest-servlet-initializer</artifactId>
   </dependency>
-  <dependency>
-    <groupId>io.github.vpelikh</groupId>
-    <artifactId>swagger-jakarta-rest-servlet-initializer-v2</artifactId>
-  </dependency>
 </dependencies>
 ```
 
@@ -237,7 +233,6 @@ dependencies {
     // Jakarta REST 4.0 artifacts — no version needed
     implementation("io.github.vpelikh:swagger-jakarta-rest")
     implementation("io.github.vpelikh:swagger-jakarta-rest-servlet-initializer")
-    implementation("io.github.vpelikh:swagger-jakarta-rest-servlet-initializer-v2")
 }
 
 ## Sample Apps
