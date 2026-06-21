@@ -44,7 +44,7 @@ jobs:
 
       - name: Build with Maven and Gradle
         run: |
-          ./mvnw --no-transfer-progress -B install --file pom.xml
+          ./mvnw --no-transfer-progress -B -T 1C install --file pom.xml
           cd ./modules/swagger-gradle-plugin
           ./gradlew build --info --build-cache
           cd ../..
@@ -55,7 +55,7 @@ jobs:
           MY_POM_VERSION=$(./mvnw -q -DforceStdout help:evaluate -Dexpression=project.version --non-recursive)
           echo "POM VERSION: $MY_POM_VERSION"
           if [[ $MY_POM_VERSION =~ ^.*SNAPSHOT$ ]]; then
-            ./mvnw --no-transfer-progress -B clean deploy -e
+            ./mvnw --no-transfer-progress -B -T 1C clean deploy -e
           else
             echo "Not a SNAPSHOT version, skipping deployment."
           fi
@@ -64,4 +64,4 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
 
       - name: Verify BOM integration test
-        run: ./mvnw --no-transfer-progress -B validate -Pbom-it
+        run: ./mvnw --no-transfer-progress -B -T 1C validate -Pbom-it

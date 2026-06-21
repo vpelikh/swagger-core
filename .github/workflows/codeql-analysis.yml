@@ -39,7 +39,7 @@ jobs:
 
       - name: Build with Maven and Gradle
         run: |
-          ./mvnw --no-transfer-progress -B install --file pom.xml
+          ./mvnw --no-transfer-progress -B -T 1C install --file pom.xml
           cd ./modules/swagger-gradle-plugin
           ./gradlew build --info --build-cache
           cd ../..

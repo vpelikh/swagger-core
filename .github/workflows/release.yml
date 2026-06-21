@@ -55,12 +55,12 @@ jobs:
 
       - name: Build and test
         run: |
-          ./mvnw --no-transfer-progress -B install --file pom.xml
+          ./mvnw --no-transfer-progress -B -T 1C install --file pom.xml
           cd modules/swagger-gradle-plugin && ./gradlew build --info --build-cache && cd ../..
 
       - name: Deploy to Maven Central
         if: success()
-        run: ./mvnw --no-transfer-progress -B -Prelease deploy
+        run: ./mvnw --no-transfer-progress -B -T 1C -Prelease deploy
 
       - name: Publish Gradle plugin
         if: success()
