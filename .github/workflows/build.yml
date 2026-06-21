@@ -3,8 +3,16 @@ name: Build
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '**.adoc'
   pull_request:
     branches: [ "master" ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '**.adoc'
 
 jobs:
   build:
