@@ -56,7 +56,7 @@ jobs:
       - name: Build and test
         run: |
           ./mvnw --no-transfer-progress -B -T 1C install --file pom.xml
-          cd modules/swagger-gradle-plugin && ./gradlew build --info --build-cache && cd ../..
+          cd modules/swagger-gradle-plugin && ./gradlew build --info --build-cache --parallel && cd ../..
 
       - name: Deploy to Maven Central
         if: success()
@@ -66,7 +66,7 @@ jobs:
         if: success()
         run: |
           cd modules/swagger-gradle-plugin
-          ./gradlew publishPlugins -Pgradle.publish.key="${GRADLE_PUBLISH_KEY}" -Pgradle.publish.secret="${GRADLE_PUBLISH_SECRET}" --info --build-cache
+          ./gradlew publishPlugins -Pgradle.publish.key="${GRADLE_PUBLISH_KEY}" -Pgradle.publish.secret="${GRADLE_PUBLISH_SECRET}" --info --build-cache --parallel
           cd ../..
 
       - name: Tag and push release tag

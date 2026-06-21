@@ -41,7 +41,7 @@ jobs:
         run: |
           ./mvnw --no-transfer-progress -B -T 1C install --file pom.xml
           cd ./modules/swagger-gradle-plugin
-          ./gradlew build --info --build-cache
+          ./gradlew build --info --build-cache --parallel
           cd ../..
 
       - name: Perform CodeQL Analysis
