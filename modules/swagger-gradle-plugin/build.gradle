@@ -13,9 +13,17 @@ plugins {
 // Dependencies
 // * * * * * * * * * * * *
 
+import org.apache.tools.ant.filters.ReplaceTokens
+
 repositories {
     mavenLocal()
     mavenCentral()
+}
+
+processResources {
+    filter(ReplaceTokens, tokens: [
+        "project.version": project.version
+    ])
 }
 
 compileJava {
@@ -66,7 +74,6 @@ gradlePlugin {
 // * * * * * * * * * * * *
 // Publishing
 // * * * * * * * * * * * *
-
 
 // Publishing to plugins.gradle.org
 // --------------------------------
