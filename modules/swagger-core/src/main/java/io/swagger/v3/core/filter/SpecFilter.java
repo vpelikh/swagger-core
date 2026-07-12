@@ -331,6 +331,10 @@ public class SpecFilter {
             }
         }
 
+        if (schema.getPropertyNames() != null) {
+            addSchemaRef(schema.getPropertyNames(), referencedDefinitions);
+        }
+
         if (schema instanceof ArraySchema &&
                 ((ArraySchema) schema).getItems() != null) {
             addSchemaRef(((ArraySchema) schema).getItems(), referencedDefinitions);
@@ -470,7 +474,6 @@ public class SpecFilter {
     }
 
     protected OpenAPI removeBrokenReferenceDefinitions(OpenAPI openApi) {
-
         if (openApi == null || openApi.getComponents() == null || openApi.getComponents().getSchemas() == null) {
             return openApi;
         }
