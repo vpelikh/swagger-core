@@ -28,10 +28,18 @@ public class SchemaSerializer extends ValueSerializer<Schema> {
 
         if (StringUtils.isBlank(value.get$ref())) {
 
-            if (value.getExampleSetFlag() && value.getExample() == null) {
+            boolean hasNullExample = value.getExampleSetFlag() && value.getExample() == null;
+            boolean hasNullDefault = value.getDefaultSetFlag() && value.getDefault() == null;
+
+            if (hasNullExample || hasNullDefault) {
                 jgen.writeStartObject();
                 defaultSerializer.unwrappingSerializer(null).serialize(value, jgen, provider);
-                jgen.writeNullProperty("example");
+                if (hasNullExample) {
+                    jgen.writeNullProperty("example");
+                }
+                if (hasNullDefault) {
+                    jgen.writeNullProperty("default");
+                }
                 jgen.writeEndObject();
             } else {
                 defaultSerializer.serialize(value, jgen, provider);
