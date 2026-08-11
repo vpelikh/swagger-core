@@ -56,7 +56,6 @@
                 <executions>
                     <execution>
                         <id>test-compile</id>
-                        <phase>process-test-resources</phase>
                         <goals><goal>test-compile</goal></goals>
                         <configuration>
                             <sourceDirs>
@@ -150,6 +149,12 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tools.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>${jackson-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
