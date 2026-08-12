@@ -18,10 +18,9 @@ import static org.testng.Assert.assertTrue;
 /**
  * {@code AbstractModelConverter} used to overwrite the {@code AccessorNamingStrategy.Provider} of
  * every mapper handed to it, so a caller could not influence how {@link ModelResolver} derives
- * property names. That matters for languages whose accessors do not follow the Java bean
- * convention: a Kotlin {@code val isFoo: Boolean} compiles to {@code isFoo()}, whose bean-stripped
- * name {@code foo} does not match the {@code isFoo} the constructor parameter contributes, so the
- * schema ends up with both.
+ * property names. A strategy the caller configured is honoured by their mapper at serialization
+ * time, so discarding it here made the schema's property names diverge from the JSON the mapper
+ * actually produces.
  */
 public class CallerAccessorNamingTest {
 
@@ -37,8 +36,8 @@ public class CallerAccessorNamingTest {
     }
 
     /**
-     * Keeps the {@code is} prefix instead of stripping it, the way jackson-module-kotlin does for
-     * Kotlin classes.
+     * A caller-supplied strategy that keeps the {@code is} prefix instead of stripping it, as a
+     * representative deviation from the default bean-convention naming.
      */
     public static class KeepIsPrefixProvider extends DefaultAccessorNamingStrategy.Provider {
 

@@ -45,9 +45,9 @@ public abstract class AbstractModelConverter implements ModelConverter {
                     }
                 });
         // Only impose Swagger's own accessor naming when the caller has not configured one.
-        // Overwriting it unconditionally made it impossible to influence how property names are
-        // derived for schema generation -- for example to stop a Kotlin `val isFoo: Boolean` from
-        // being split into an `isFoo` creator property and a `foo` accessor property.
+        // Overwriting it unconditionally discards the caller's strategy, so schema property names
+        // diverge from the JSON the caller's mapper actually produces -- e.g. properties read via
+        // non-bean-convention accessors go missing from the schema.
         if (usesDefaultAccessorNaming(mapper)) {
             builder.accessorNaming(new DefaultAccessorNamingStrategy.Provider()
                     .withFirstCharAcceptance(true, true));
