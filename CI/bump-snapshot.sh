@@ -34,9 +34,13 @@ echo "Bumping version on master to $NEXT_SNAPSHOT"
 # Update gradle.properties
 sed -i "s/version=.*/version=${NEXT_SNAPSHOT}/" modules/swagger-gradle-plugin/gradle.properties
 
-# Commit and push
+# Commit locally, then rebase onto the latest remote master before pushing.
+# The release build can take many minutes, so master may have moved forward
+# since the initial pull above. Rebasing right before the push avoids the
+# "fetch first" rejection that aborts the whole release.
 git config user.email "action@github.com"
 git config user.name "GitHub Action"
 git add -A
 git commit -m "Bump version to ${NEXT_SNAPSHOT}"
+git pull --rebase origin master
 git push origin master
