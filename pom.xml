@@ -229,7 +229,7 @@
                             -define-contract: \
                                 osgi.contract;osgi.contract=JavaJAXRS;version:List<Version>="4.0";uses:="jakarta.ws.rs,jakarta.ws.rs.core,jakarta.ws.rs.ext,jakarta.ws.rs.client,jakarta.ws.rs.container",\
                                 osgi.contract;osgi.contract=JavaServlet;version:List<Version>="6.0";uses:="jakarta.servlet,jakarta.servlet.annotation,jakarta.servlet.descriptor,jakarta.servlet.http"
-                            -cdiannotations: *
+                            -cdiannotations:
                         ]]></bnd>
                     </configuration>
                     <executions>
