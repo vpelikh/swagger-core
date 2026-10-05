@@ -615,7 +615,7 @@
         <jakarta.activation-api-version>2.1.4</jakarta.activation-api-version>
         <bnd-version>7.4.0</bnd-version>
         <servlet-api-version>6.1.0</servlet-api-version>
-        <jersey-version>4.0.2</jersey-version>
+        <jersey-version>4.0.3</jersey-version>
         <jakarta.annotation-api-version>3.0.0</jakarta.annotation-api-version>
         <validation-api-version>3.1.1</validation-api-version>
         <jackson-annotations-version>2.22</jackson-annotations-version>
